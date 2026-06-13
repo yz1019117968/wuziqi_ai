@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"d:/Projects/wuziqi_ai/.codebuddy/hooks/validate_command.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
