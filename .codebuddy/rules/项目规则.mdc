@@ -1,0 +1,25 @@
+---
+description: 
+alwaysApply: true
+enabled: true
+updatedAt: 2026-06-11T09:26:15.584Z
+provider: 
+---
+
+1. 每次更新代码，对发布版本一同更新。发布版本为wuziqi_ai.release.zip。内部涵盖独立运行需要的可执行文件、动态链接库、以及README.md等必要文件。以便于在其他机器上运行该项目。
+2. 在开发过程中提出新需求时，除更新必要代码外，更新相应的说明文档，如README.md、.codebuddy/plans下的规划文件等。
+3. gcc在这个位置：D:\APPs\DevCpp\MinGW64\bin\gcc.exe
+4. Git commit 使用中文前缀规范，格式：`[类型] 简短描述`。类型包括：
+   - `[新增]` — 新功能/新特性
+   - `[修复]` — Bug 修复
+   - `[优化]` — 性能/代码优化、重构
+   - `[文档]` — 文档更新
+   - `[样式]` — UI/样式调整
+   - `[构建]` — 构建系统、依赖、打包相关
+   示例：`[修复] Load/Cancel 按钮残留在棋局页面的问题`
+5. 每次变更代码后，使用 MCP 工具 codegraph 更新知识图谱。具体操作：
+   - 使用 codegraph_status 确认 codegraph 服务状态
+   - 使用 codegraph_files 同步变更的文件到 codegraph
+   - 使用 codegraph_impact 检查变更文件的上下游依赖，确认是否有必要的关联文件需要同步修改
+   - 确保知识图谱与当前代码库保持一致
+   - 更新知识图谱后，调用代码审查agent对本次变更进行代码审查
